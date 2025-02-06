@@ -32,6 +32,21 @@ def facil():
             print(elemento, end=' ')
         print() 
 
+    # preciso fazer a parte do usuario escolher a localização!
+    print("--------------------------------------------")
+    while True:
+        try:
+            escolha_x = int(input("Selecione a LINHA (0 a 8): "))
+            escolha_y = int(input("Selecione a COLUNA (0 a 8): "))
+            if 0 <= escolha_x <= 8 and 0 <= escolha_y <= 8:
+                break
+            else:
+                print("Coordenadas inválidas, tente novamente.")
+        except ValueError:
+            print("Apenas Números Inteiros!")
+
+
+
 print("")
 print("~~~~~~~~~~~~-> \033[32m CAMPO MINADO \033[0m <-~~~~~~~~~~~~")
 print("--------------------------------------------")
