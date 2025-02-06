@@ -8,11 +8,16 @@ def facil():
         for contador_dois in range(colunas):
             linha.append("■")
         matriz_facil.append(linha)
-        
-    for linha in matriz_facil:
-        for elemento in linha:
-            print(elemento, end=' ')
-        print() 
+
+    print("    ",end="")
+    for contador_tres in range(colunas):
+        print(f"{contador_tres}", end="")
+    print()    
+    
+    # for linha in matriz_facil:
+    #     for elemento in linha:
+    #         print(elemento, end=' ')
+    #     print() 
 
 print("")
 print("~~~~~~~~~~~~-> \033[32m CAMPO MINADO \033[0m <-~~~~~~~~~~~~")
