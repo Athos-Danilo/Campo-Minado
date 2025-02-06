@@ -84,30 +84,30 @@
 # facil()
 
 
-def facil():
-    linhas = 9
-    colunas = 9
-    matriz_menor = []
+# def facil():
+#     linhas = 9
+#     colunas = 9
+#     matriz_menor = []
     
-    # Criação da matriz
-    for contador_um in range(linhas):
-        linha = []
-        for contador_dois in range(colunas):
-            linha.append("■")
-        matriz_menor.append(linha)
+#     # Criação da matriz
+#     for contador_um in range(linhas):
+#         linha = []
+#         for contador_dois in range(colunas):
+#             linha.append("■")
+#         matriz_menor.append(linha)
     
-    # Imprimir os números das colunas
-    print("    ", end="")
-    for i in range(colunas):
-        print(f"{i} ", end="")
-    print()  # Pular uma linha após os números das colunas
+#     # Imprimir os números das colunas
+#     print("    ", end="")
+#     for i in range(colunas):
+#         print(f"{i} ", end="")
+#     print()  # Pular uma linha após os números das colunas
     
-    # Imprimir a matriz com os números das linhas
-    for i, linha in enumerate(matriz_menor):
-        print(f"{i} | ", end="")  # Número da linha à esquerda
-        for elemento in linha:
-            print(elemento, end=' ')
-        print()  # Quebra de linha após cada linha da matriz
+#     # Imprimir a matriz com os números das linhas
+#     for i, linha in enumerate(matriz_menor):
+#         print(f"{i} | ", end="")  # Número da linha à esquerda
+#         for elemento in linha:
+#             print(elemento, end=' ')
+#         print()  # Quebra de linha após cada linha da matriz
 
-# Chama a função
-facil()
+# # Chama a função
+# facil()
