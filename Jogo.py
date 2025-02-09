@@ -39,13 +39,21 @@ def facil():
             escolha_x = int(input("Selecione a LINHA (0 a 8): "))
             escolha_y = int(input("Selecione a COLUNA (0 a 8): "))
             if 0 <= escolha_x <= 8 and 0 <= escolha_y <= 8:
+                matriz_facil[escolha_x][escolha_y] = "#"
+                for contador_quatro, linha in enumerate(matriz_facil):
+                    print(f"{contador_quatro} > ", end="")
+                    for elemento in linha:
+                        print(elemento, end=' ')
+                    print() 
                 break
             else:
                 print("Coordenadas inválidas, tente novamente.")
         except ValueError:
             print("Apenas Números Inteiros!")
 
-
+# 2. preciso fazer com que as minas fiquem escondidas 
+# 1. preeciso modificar a parte de escolher a localização para que quando o usuario selecione um elemento ele mude para outra forma
+# 3.
 
 print("")
 print("~~~~~~~~~~~~-> \033[32m CAMPO MINADO \033[0m <-~~~~~~~~~~~~")
