@@ -33,19 +33,23 @@ def facil():
         print() 
 
     # preciso fazer a parte do usuario escolher a localização!
+    
     print("--------------------------------------------")
     while True:
         try:
             escolha_x = int(input("Selecione a LINHA (0 a 8): "))
             escolha_y = int(input("Selecione a COLUNA (0 a 8): "))
             if 0 <= escolha_x <= 8 and 0 <= escolha_y <= 8:
-                matriz_facil[escolha_x][escolha_y] = "#"
-                for contador_quatro, linha in enumerate(matriz_facil):
-                    print(f"{contador_quatro} > ", end="")
-                    for elemento in linha:
-                        print(elemento, end=' ')
-                    print() 
-                break
+                if matriz_facil[escolha_x][escolha_y] == "X":
+                    print("Perdeu!")
+                    break
+                else:
+                    matriz_facil[escolha_x][escolha_y] = "#"
+                    for contador_quatro, linha in enumerate(matriz_facil):
+                        print(f"{contador_quatro} > ", end="")
+                        for elemento in linha:
+                            print(elemento, end=' ')
+                        print()  
             else:
                 print("Coordenadas inválidas, tente novamente.")
         except ValueError:
