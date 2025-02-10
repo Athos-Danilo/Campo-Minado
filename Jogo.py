@@ -144,11 +144,11 @@ def medio():
 
     print("    ",end="")
     for contador_tres in range(colunas):
-        print(f"{contador_tres} ", end="")
+        print(f"{contador_tres}", end=" ")
     print()    
     
     for contador_quatro, linha in enumerate(matriz_facil):
-        print(f"{contador_quatro} > ", end="")
+        print(f"{contador_quatro} >  ", end="")
         for elemento in linha:
             print(elemento, end=' ')
         print() 
@@ -174,9 +174,9 @@ def medio():
                         break
                     continue
 
-            escolha_x = int(input("Selecione a LINHA (0 a 8): "))
-            escolha_y = int(input("Selecione a COLUNA (0 a 8): "))
-            if 0 <= escolha_x <= 8 and 0 <= escolha_y <= 8:
+            escolha_x = int(input("Selecione a LINHA (0 a 15): "))
+            escolha_y = int(input("Selecione a COLUNA (0 a 15): "))
+            if 0 <= escolha_x <= 15 and 0 <= escolha_y <= 15:
                 if (escolha_x, escolha_y) in minas:
                     print("\033[31mPerdeu! Você caiu numa Mina :( \033[0m ")
                     print(f"\033[31mNúmero de Tentativas: {tentativas}\033[0m")
@@ -285,9 +285,9 @@ def dificil():
                         break
                     continue
 
-            escolha_x = int(input("Selecione a LINHA (0 a 8): "))
-            escolha_y = int(input("Selecione a COLUNA (0 a 8): "))
-            if 0 <= escolha_x <= 8 and 0 <= escolha_y <= 8:
+            escolha_x = int(input("Selecione a LINHA (0 a 29): "))
+            escolha_y = int(input("Selecione a COLUNA (0 a 15): "))
+            if 0 <= escolha_x <= 29 and 0 <= escolha_y <= 15:
                 if (escolha_x, escolha_y) in minas:
                     print("\033[31mPerdeu! Você caiu numa Mina :( \033[0m ")
                     print(f"\033[31mNúmero de Tentativas: {tentativas}\033[0m")
@@ -333,7 +333,7 @@ def dificil():
 print("")
 print("~~~~~~~~~~~~-> \033[32m CAMPO MINADO \033[0m <-~~~~~~~~~~~~")
 print("--------------------------------------------")
-print("------[1] Iniciar ----- [2] Saiba Mais------")
+print("------[1] Iniciar ----- [2] Saiba Mais -----")
 while True:
     try:
         iniciar = int(input("Resosta: "))
@@ -365,6 +365,7 @@ if iniciar == 1:
     elif nivel == 3:
         dificil()
 elif iniciar == 2:
+    print("--------------------------------------------")
     print(
         "Escolha a Dificuldade do jogo, no nível fácil tem 10 Minas, no Médio 40 Minas e no Difícil 99 Minas."
         "\n" "Para Ganhar você precisa achar todas as Minas."
@@ -391,6 +392,4 @@ elif iniciar == 2:
     elif nivel == 3:
         dificil()
 
-
-# criar inteface para como jogar o jogo
 
