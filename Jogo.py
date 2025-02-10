@@ -4,6 +4,7 @@ def facil():
     linhas = 9
     colunas = 9
     matriz_facil = []
+    tentativas = 1
 
     for contador_um in range(linhas):
         linha = []
@@ -19,6 +20,14 @@ def facil():
     facil_posicao = random.sample(cordenadas, quantidade_facil)
 
     minas = set(facil_posicao)
+
+    def contador_de_minas(escolha_x, escolha_y, minas):
+        contagem = 0
+        minas_proximas = [(escolha_x, escolha_y-1), (escolha_x, escolha_y+1)]
+        for cord_x, cord_y in minas_proximas:
+            if 0 <= cord_y < colunas and (cord_x, cord_y) in minas:
+                contagem += 1
+        return contagem
 
     print("    ",end="")
     for contador_tres in range(colunas):
@@ -41,6 +50,7 @@ def facil():
             if 0 <= escolha_x <= 8 and 0 <= escolha_y <= 8:
                 if (escolha_x, escolha_y) in minas:
                     print("\033[31mPerdeu! Você caiu numa Mina :( \033[0m ")
+                    print(f"\033[31mNúmero de Tentativas: {tentativas}\033[0m")
                     for posicao_x, posicao_y in minas:
                         matriz_facil[posicao_x][posicao_y] = "\033[31mX\033[0m"
                     print("--------------------------------------------")
@@ -53,9 +63,15 @@ def facil():
                         for elemento in linha:
                             print(elemento, end=' ')
                         print()
+                    print("--------------------------------------------")
                     break
                 else:
-                    matriz_facil[escolha_x][escolha_y] = "\033[32m#\033[0m"
+                    dica = contador_de_minas(escolha_x, escolha_y, minas)
+                    if dica == 0:
+                        matriz_facil[escolha_x][escolha_y] = "\033[32m#\033[0m"
+                    else:
+                        matriz_facil[escolha_x][escolha_y] = f"\033[34m{dica}\033[0m"
+                    tentativas += 1
                     print("--------------------------------------------")
                     print("    ",end="")
                     for contador_tres in range(colunas):
@@ -72,6 +88,8 @@ def facil():
         except ValueError:
             print("Apenas Números Inteiros!")
         print("--------------------------------------------")
+
+# preciso fazer as dicas numericas 
 
 print("")
 print("~~~~~~~~~~~~-> \033[32m CAMPO MINADO \033[0m <-~~~~~~~~~~~~")
@@ -93,4 +111,7 @@ print("--------------------------------------------")
 if nivel == 1:
     facil()
 
+
+
+# criar inteface para como jogar o jogo
 
