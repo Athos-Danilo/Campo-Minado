@@ -1,5 +1,6 @@
-Campo Minado - README
-Este é um jogo de Campo Minado em Python. O objetivo é encontrar todas as minas ocultas no campo sem cair em nenhuma delas. O jogador pode escolher entre três níveis de dificuldade, cada um com diferentes tamanhos de campo e quantidade de minas.
+Campo Minado 
+
+O objetivo é encontrar todas as minas ocultas no campo sem cair em nenhuma delas. O jogador pode escolher entre três níveis de dificuldade, cada um com diferentes tamanhos de campo e quantidade de minas.
 
 Funcionalidades
 Três níveis de dificuldade:
