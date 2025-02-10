@@ -13,19 +13,22 @@ def facil():
         matriz_facil.append(linha)
 
     quantidade_facil = 10
-    cordenadas = []
+    coordenadas = []
     for elementos_um in range(linhas):
         for elementos_dois in range(colunas):
-            cordenadas.append((elementos_um, elementos_dois))
-    facil_posicao = random.sample(cordenadas, quantidade_facil)
+            coordenadas.append((elementos_um, elementos_dois))
+    facil_posicao = random.sample(coordenadas, quantidade_facil)
 
     minas = set(facil_posicao)
 
-    def contador_de_minas(escolha_x, escolha_y, minas):
+    def contador_de_minas(escolha_x, escolha_y):
         contagem = 0
-        minas_proximas = [(escolha_x, escolha_y-1), (escolha_x, escolha_y+1)]
-        for cord_x, cord_y in minas_proximas:
-            if 0 <= cord_y < colunas and (cord_x, cord_y) in minas:
+        minas_proximas = [
+            (escolha_x, escolha_y -1),
+            (escolha_x, escolha_y +1)
+        ]
+        for direcao_x, direcao_y in minas_proximas:
+            if 0 <= direcao_x < linhas and 0 <= direcao_y < colunas and (direcao_x, direcao_y) in minas:
                 contagem += 1
         return contagem
 
@@ -66,7 +69,7 @@ def facil():
                     print("--------------------------------------------")
                     break
                 else:
-                    dica = contador_de_minas(escolha_x, escolha_y, minas)
+                    dica = contador_de_minas(escolha_x, escolha_y)
                     if dica == 0:
                         matriz_facil[escolha_x][escolha_y] = "\033[32m#\033[0m"
                     else:
