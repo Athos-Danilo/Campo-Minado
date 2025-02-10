@@ -5,6 +5,7 @@ def facil():
     colunas = 9
     matriz_facil = []
     tentativas = 1
+    marcacoes = set()
 
     for contador_um in range(linhas):
         linha = []
@@ -48,6 +49,23 @@ def facil():
     print("--------------------------------------------")
     while True:
         try:
+            if tentativas >= 10:
+                resposta = input("Deseja Marcar uma Mina? (SIM / 'Enter' -> Continuar): ").lower()
+                if resposta == "sim":
+                    marcar_x = int(input("Informe a Linha da Mina: "))
+                    marcar_y = int(input("Informe a Coluna da Mina: "))
+                    if (marcar_x, marcar_y) in minas:
+                        print("\033[32mParabéns! Você marcou uma mina corretamente!\033[0m")
+                        matriz_facil[marcar_x][marcar_y] = "\033[35mM\033[0m"
+                        marcacoes.add((marcar_x, marcar_y))
+                        if marcacoes == minas:
+                            print("\033[32mVocê marcou todas as Minas corretamente! Você venceu o Jogo!\033[0m")
+                            break
+                    else:
+                        print("\033[31mErrou! Voceê marcou Errado a Mina.\033[0m")
+                        break
+                    continue
+
             escolha_x = int(input("Selecione a LINHA (0 a 8): "))
             escolha_y = int(input("Selecione a COLUNA (0 a 8): "))
             if 0 <= escolha_x <= 8 and 0 <= escolha_y <= 8:
