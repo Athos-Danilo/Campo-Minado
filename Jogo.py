@@ -45,15 +45,22 @@ def facil():
                     break
                 else:
                     matriz_facil[escolha_x][escolha_y] = "#"
+                    print("--------------------------------------------")
+                    print("    ",end="")
+                    for contador_tres in range(colunas):
+                        print(f"{contador_tres} ", end="")
+                    print()
+                    
                     for contador_quatro, linha in enumerate(matriz_facil):
                         print(f"{contador_quatro} > ", end="")
                         for elemento in linha:
                             print(elemento, end=' ')
-                        print()  
+                        print()
             else:
                 print("Coordenadas inválidas, tente novamente.")
         except ValueError:
             print("Apenas Números Inteiros!")
+        print("--------------------------------------------")
 
 # 2. preciso fazer com que as minas fiquem escondidas 
 # 1. preeciso modificar a parte de escolher a localização para que quando o usuario selecione um elemento ele mude para outra forma
